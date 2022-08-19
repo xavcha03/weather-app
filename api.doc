@@ -1,0 +1,11 @@
+dba81f2ac1d88360af75ac8419400cdd
+https://api.openweathermap.org/data/2.5/weather?q=charleroi&lang=fr&units=metric&appid=dba81f2ac1d88360af75ac8419400cdd
+
+
+https://api.openweathermap.org/data/2.5/forecast?q=charleroi&lang=fr&units=metr&appid=dba81f2ac1d88360af75ac8419400cdd
+
+
+icon https://openweathermap.org/weather-conditions
+
+
+https://api.teleport.org/api/cities/?search=B

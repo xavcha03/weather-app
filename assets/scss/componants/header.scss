@@ -1,0 +1,104 @@
+.header {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.56em;
+
+    position: relative;
+
+
+
+    &__form {
+
+        display: flex;
+        justify-content: center;
+        gap: 0.56em;
+
+
+        .input-group {
+            display: flex;
+            align-items: center;
+
+            background-color: $color-white;
+            border: 3px solid $color-white;
+            border-radius: 1em;
+            overflow: hidden;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            border: none;
+            background-color: $color-white;
+            color: $color-darkBlue;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            background-color: $color-darkBlue;
+            border: none;
+            width: 2.3em;
+            height: 2.3em;
+            border-radius: 1em;
+            color: $color-white;
+        }
+    }
+
+    &__nav {
+
+
+        button {
+            width: 1.31em;
+            height: 2em;
+            background-color: transparent;
+            border: none;
+            background-image: url('../img/icon-menu.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-position: contain;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        ul {
+            top: 100%;
+            position: absolute;
+            visibility: hidden;
+            display: none;
+            right: 0;
+            left: 0;
+
+            &.open {
+                display: block;
+                visibility: visible;
+            }
+
+
+
+        }
+
+
+
+        li {}
+
+        a {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            padding: 0.5em;
+            background-color: $color-white;
+            color: $color-darkBlue;
+            text-decoration: none;
+            ;
+        }
+    }
+}
