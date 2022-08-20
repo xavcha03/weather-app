@@ -2,7 +2,17 @@ body {
     background-color: $color-darkBlue;
 }
 
-.container{
+.container {
     width: 100%;
-    
+
+}
+
+a {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5em;
+    background-color: $color-white;
+    color: $color-darkBlue;
+    text-decoration: none;
 }

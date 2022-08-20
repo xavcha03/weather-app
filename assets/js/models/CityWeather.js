@@ -1,0 +1,5 @@
+class CityWeather{
+    constructor(datas){
+        
+    }
+}

@@ -1,11 +1,18 @@
 class App{
     constructor(){
         this.headerWrapper = document.querySelector("header")
-        this.header = new HeaderController(this.headerWrapper, this.router);
+        this.header = new HeaderController(this.headerWrapper, this.router, this.changeCity.bind());
+        this.weatherController = new weatherContoller();
+        
 
     }   
 
     async main(){
+        
+    }
+    //Change les données de la ville à afficher
+    changeCity(city){
+        console.log(city);
     }
 
     router = (route)=>{
@@ -28,5 +35,8 @@ class App{
         this.header.closeMenu();
     }
 }
+let recentCities = ["Charleroi", "Bruxelles", "Madrir"]
+localStorage.setItem('recentCities', JSON.stringify(recentCities));
+
 let app = new App();
 app.main();

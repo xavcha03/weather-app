@@ -128,6 +128,15 @@ body {
 .container {
   width: 100%; }
 
+a {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5em;
+  background-color: #E3E9CD;
+  color: #104D7A;
+  text-decoration: none; }
+
 .header {
   padding: 1em;
   display: flex;
@@ -145,7 +154,19 @@ body {
       background-color: #E3E9CD;
       border: 3px solid #E3E9CD;
       border-radius: 1em;
-      overflow: hidden; }
+      position: relative; }
+      .header__form .input-group .cities {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #E3E9CD;
+        margin-top: 1em;
+        padding: 1em;
+        border-radius: 1em;
+        display: none; }
+        .header__form .input-group .cities.open {
+          display: block; }
     .header__form label {
       display: flex;
       align-items: center; }

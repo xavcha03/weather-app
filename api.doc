@@ -9,3 +9,9 @@ icon https://openweathermap.org/weather-conditions
 
 
 https://api.teleport.org/api/cities/?search=B
+
+
+
+let citiesArray = cities["_embedded"]["city:search-results"];
+
+cities._embedded
