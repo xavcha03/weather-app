@@ -1,25 +1,16 @@
-class Api {
-    constructor(url) {
-        this._url = url
+class WeatherApi{
+    constructor() {
+        this.baseUrl = "https://api.openweathermap.org/data/2.5/";
+        this.urlOptions = "&lang=fr&units=metric&appid=dba81f2ac1d88360af75ac8419400cdd";
     }
 
-    async get() {
-        return fetch(this._url)
-            .then(res => res.json())
-            .then(res => res)
-            .catch(err => {
-                console.log('an error occurs', err)
-            })
-    }
-}
-
-
-class CitiesApi extends Api {
-    constructor(url) {
-        super(url)
+    async getWeatherData(city){
+        let datas = await (await fetch(this.baseUrl + "weather?q=" + city + this.urlOptions)).json();
+        return datas;
     }
 
-    async getCities() {
-        return await this.get()
+    async getWeatherWeekData(city){
+        let datas = await (await fetch(this.baseUrl + "forecast?q=" + city + this.urlOptions)).json();
+        return datas;
     }
 }

@@ -3,6 +3,9 @@
 @import './utils/mixins';
 
 @import './base/base.scss';
+@import './elements/cursor';
+@import './elements/wind';
 
 
 @import './componants/header.scss';
+@import './componants/city-weather';

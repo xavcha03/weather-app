@@ -33,57 +33,46 @@
 
         <!-- Selected city weather -->
         <section class="city-weather">
-            <div class="city-weather__header">
-                <h1>Charleroi</h1>
-                <button class="fav-btn"></button>
-            </div>
-            <img src="assets/img/pluie.jpg" alt="">
-            <span class="degrees">19°</span>
-            <div class="temp-min-max">
-                <span>min : 23.4</span>
-                <span>max : 27.4</span>
-            </div>
-            <span>Ressenti : 25°</span>
-            <h2>Humidité</h2>
-            <span>69 %</span>
-            <div class="cursor"></div> <!-- use before/after to move the cursor-->
-            <section class="wind">
-                <div class="orientation">
-                    <img src="boussole" alt="">
-                    <img src="fleche" alt="">
-                </div>
-                <span class="wind-speed">2.3km/h</span>
-            </section>
-            <section class="chart-hours">chart</section>
-            <section class="days-list">
-                <div class="days">
-                    <span class="day-name">Lu</span>
-                    <img src="logo" alt="">
-                    <span class="temp">19°</span>
-                </div>
-                <div class="days">
-                    <span class="day-name">Lu</span>
-                    <img src="logo" alt="">
-                    <span class="temp">19°</span>
-                </div>
-                <div class="days">
-                    <span class="day-name">Lu</span>
-                    <img src="logo" alt="">
-                    <span class="temp">19°</span>
-                </div>
-                <div class="days">
-                    <span class="day-name">Lu</span>
-                    <img src="logo" alt="">
-                    <span class="temp">19°</span>
-                </div>
-                <div class="days">
-                    <span class="day-name">Lu</span>
-                    <img src="logo" alt="">
-                    <span class="temp">19°</span>
-                </div>
-            </section>
+            
+            
         </section> 
         <!-- End Selected city weather -->
+
+        <!-- Chart day température -->
+        <section class="chart-hours">chart</section>
+        <!-- End Chart day température -->
+        
+        <!-- next days température -->
+        <section class="days-list">
+            <div class="days">
+                <span class="day-name">Lu</span>
+                <img src="logo" alt="">
+                <span class="temp">19°</span>
+            </div>
+            <div class="days">
+                <span class="day-name">Lu</span>
+                <img src="logo" alt="">
+                <span class="temp">19°</span>
+            </div>
+            <div class="days">
+                <span class="day-name">Lu</span>
+                <img src="logo" alt="">
+                <span class="temp">19°</span>
+            </div>
+            <div class="days">
+                <span class="day-name">Lu</span>
+                <img src="logo" alt="">
+                <span class="temp">19°</span>
+            </div>
+            <div class="days">
+                <span class="day-name">Lu</span>
+                <img src="logo" alt="">
+                <span class="temp">19°</span>
+            </div>
+        </section>
+        <!-- End next days température -->
+
+
     </div>
 </body>
 </html>
@@ -91,5 +80,5 @@
 <script defer src="assets/js/api/api.js"></script>
 <script defer src="assets/js/controllers/HeaderController.js"></script>
 <script defer src="assets/js/controllers/weatherController.js"></script>
-<script defer src="assets/js/models/CityWeather.js"></script>
+<script defer src="assets/js/models/CityWeatherModel.js"></script>
 <script defer src="assets/js/App.js"></script>

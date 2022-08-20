@@ -1,0 +1,59 @@
+.city-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        h1 {
+            font-weight: 600;
+            font-size: 1em;
+            color: $color-white;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            background-image: url('../img/fav.svg');
+            width: 1.5em;
+            height: 1.5em;
+            background-position: center;
+            background-size: contain;
+
+            &.selected {
+                background-image: url('../img/fav-selected.svg');
+            }
+        }
+
+
+    }
+
+    .maindatas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6em;
+
+        width: 100%;
+
+        color: $color-white;
+
+        .big-logo-weather {
+            width: 10em;
+        }
+
+        .degrees {
+            font-size: 2em;
+            font-weight: 600;
+
+
+        }
+    }
+
+
+}

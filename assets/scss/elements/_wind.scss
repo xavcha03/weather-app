@@ -1,0 +1,30 @@
+.wind {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+
+    &__orientation {
+        position: relative;
+        width: 6.25em;
+        height: 6.25em;
+        background-image: url('../img/boussole.svg');
+        background-position: center;
+        background-size: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        img {
+            position: absolute;
+            transform: rotate(var(--windDeg));
+        }
+    }
+
+    &__speed {
+        color: $color-white;
+        font-size: 2em;
+
+    }
+}

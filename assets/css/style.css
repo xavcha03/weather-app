@@ -122,8 +122,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+:root {
+  --humidity: 100%;
+  --windDeg: 0; }
+
 body {
-  background-color: #104D7A; }
+  background-color: #104D7A;
+  padding: 1em; }
 
 .container {
   width: 100%; }
@@ -136,6 +141,46 @@ a {
   background-color: #E3E9CD;
   color: #104D7A;
   text-decoration: none; }
+
+.cursor {
+  height: 0.43em;
+  width: 100%;
+  background-color: #02121E;
+  position: relative;
+  border-radius: calc(0.43em /2); }
+  .cursor::before {
+    content: '';
+    display: block;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: #99D98C;
+    position: absolute;
+    top: 50%;
+    left: calc((var(--humidity)) - 1.25em);
+    transform: translatey(-50%);
+    border-radius: calc(1.25em/2); }
+
+.wind {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center; }
+  .wind__orientation {
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    background-image: url("../img/boussole.svg");
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .wind__orientation img {
+      position: absolute;
+      transform: rotate(var(--windDeg)); }
+  .wind__speed {
+    color: #E3E9CD;
+    font-size: 2em; }
 
 .header {
   padding: 1em;
@@ -212,5 +257,42 @@ a {
     background-color: #E3E9CD;
     color: #104D7A;
     text-decoration: none; }
+
+.city-weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em; }
+  .city-weather__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+    .city-weather__header h1 {
+      font-weight: 600;
+      font-size: 1em;
+      color: #E3E9CD; }
+    .city-weather__header button {
+      background-color: transparent;
+      border: none;
+      background-image: url("../img/fav.svg");
+      width: 1.5em;
+      height: 1.5em;
+      background-position: center;
+      background-size: contain; }
+      .city-weather__header button.selected {
+        background-image: url("../img/fav-selected.svg"); }
+  .city-weather .maindatas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6em;
+    width: 100%;
+    color: #E3E9CD; }
+    .city-weather .maindatas .big-logo-weather {
+      width: 10em; }
+    .city-weather .maindatas .degrees {
+      font-size: 2em;
+      font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map */

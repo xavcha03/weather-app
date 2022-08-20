@@ -1,0 +1,22 @@
+.cursor {
+    height: 0.43em;
+    width: 100%;
+    background-color: $color-black;
+    position: relative;
+    border-radius: calc(0.43em /2);
+
+    &::before {
+        content: '';
+        display: block;
+        width: 1.25em;
+        height: 1.25em;
+        background-color: $color-primary;
+
+        position: absolute;
+        top: 50%;
+        left: calc((var(--humidity)) - 1.25em);
+        transform: translatey(-50%);
+
+        border-radius: calc(1.25em/2);
+    }
+}

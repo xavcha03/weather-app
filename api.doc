@@ -1,7 +1,8 @@
 dba81f2ac1d88360af75ac8419400cdd
+//5jours
 https://api.openweathermap.org/data/2.5/weather?q=charleroi&lang=fr&units=metric&appid=dba81f2ac1d88360af75ac8419400cdd
 
-
+//1 jour
 https://api.openweathermap.org/data/2.5/forecast?q=charleroi&lang=fr&units=metr&appid=dba81f2ac1d88360af75ac8419400cdd
 
 
