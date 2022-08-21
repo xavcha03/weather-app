@@ -66,8 +66,7 @@ class App{
         this.header.closeMenu();
     }
 }
-let recentCities = ["Charleroi", "Bruxelles", "Madrir"]
-localStorage.setItem('recentCities', JSON.stringify(recentCities));
+
 
 let app = new App();
 app.main();

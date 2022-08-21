@@ -25,8 +25,23 @@ class HeaderController{
     addEventSubmitBtn(){
         this.submitBtn.addEventListener("click", e=>{
             e.preventDefault();
-            this.changeCityFunc(this.input.value);
+            let city = this.input.value;
+            this.changeCityFunc(city);
+            this.input.value = "";
+            this.addCityInLocalStorage(city);
+            this.closeCityList();
         })
+    }
+
+    addCityInLocalStorage(city){
+        let recentCities = JSON.parse(localStorage.getItem("recentCities"));
+        if(recentCities && !recentCities.includes(city)){
+            recentCities.push(city);
+        }else{
+            recentCities = [city];
+        }
+
+        localStorage.setItem("recentCities",JSON.stringify(recentCities));
     }
 
     async getCitiesFromApi(str){
@@ -40,7 +55,6 @@ class HeaderController{
         this.input.addEventListener("keyup",async  e=>{
             this.recentCitiesDOM.classList.remove('open');
             let currentInput = this.input.value;
-            console.log(currentInput)
             let response = await this.getCitiesFromApi(currentInput);
             let cities = response["_embedded"]["city:search-results"];
             console.clear();
@@ -76,10 +90,12 @@ class HeaderController{
         this.input.addEventListener('focus',e=>{
             if(this.input.value != '') return;
             //Récupération de la liste des ville
-            let cities = JSON.parse(localStorage.getItem("recentCities"));
+            let localStorageData = localStorage.getItem("recentCities");
+            console.log(localStorageData);
+            let cities = JSON.parse(localStorageData);
             //S'il y a des villes on affiche
             
-            if(cities.length>0){
+            if(cities){
                 //suppression des villes déjà placée dans le panel
                 this.recentCitiesDOM.innerHTML = '';
                 cities.forEach(city=>{
@@ -109,6 +125,10 @@ class HeaderController{
         this.input.addEventListener('blur',e=>{
             //this.recentCitiesDOM.classList.remove('open');
         })
+    }
+
+    closeCityList(){
+        this.recentCitiesDOM.classList.remove('open');
     }
 
     closeMenu(){
