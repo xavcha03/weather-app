@@ -1,0 +1,19 @@
+.days-list {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden scroll;
+    overflow-y: hidden;
+    padding: 1em;
+
+    .day {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+
+        &__img {
+            width: 100px;
+        }
+    }
+}

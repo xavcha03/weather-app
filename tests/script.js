@@ -1,12 +1,16 @@
-let url = "https://api.openweathermap.org/data/2.5/weather?q=charleroi&lang=fr&units=metric&appid=dba81f2ac1d88360af75ac8419400cdd"
-async function getResult(url){
-    return await fetch(url);
+//Una fabbrica/funzione che produce alberi di Natale 
+
+function creatoreDiAlberi(abeteVerde, gingilloDiNatale, ghirlanda, vasoPerPiante){
+    //if(se siamo in inverno){
+        //1) collocare l'albero nel vaso da fiori
+        //2) posizionare le ghirlande intorno all'albero
+        //3) Daniela() sistema le palline in modo meticoloso
+    //}else{
+        //4) distruggere l'albero
+        //5) impiantoDiPellet(step4Result)
+    //}
+
+    //4) metterlo in una scatola
+
+    //5) far uscire l'albero di Natale finito dalla fabbrica => return
 }
-
-async function main(){
-    let result = await (await getResult(url)).json();
-    console.log(result);
-}
-
-main();
-

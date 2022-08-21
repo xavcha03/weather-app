@@ -2,6 +2,36 @@ class WeatherContoller{
     constructor(){
     }
 
+    initChart(datas){
+        
+        console.log(datas.map(data=>data.temp))
+        const labels = datas.map(data=>data.weekDay + ' ' + data.hours + ':'+data.minutes)
+
+        
+          const data = {
+            labels: labels,
+            datasets: [{
+              label: 'Température des 5 prochains jours',
+              backgroundColor: 'rgb(153, 217, 140)',
+              borderColor: 'rgb(2, 18, 30)',
+              data: datas.map(data=>data.temp),
+            }]
+          };
+        
+          const config = {
+            type: 'line',
+            data: data,
+            options: {}
+          };
+
+          const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+        console.log(myChart);
+    }
+
 
     createTemplate(cityWeatherModel)
     {

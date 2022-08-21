@@ -295,4 +295,22 @@ a {
       font-size: 2em;
       font-weight: 600; }
 
+.days-list {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden scroll;
+  overflow-y: hidden;
+  padding: 1em; }
+  .days-list .day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+    .days-list .day__img {
+      width: 100px; }
+
+.chart-hours {
+  max-width: 600px;
+  margin: 0 auto; }
+
 /*# sourceMappingURL=style.css.map */

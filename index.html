@@ -39,36 +39,14 @@
         <!-- End Selected city weather -->
 
         <!-- Chart day température -->
-        <section class="chart-hours">chart</section>
+        <section class="chart-hours">
+            <canvas id="myChart"></canvas>
+        </section>
         <!-- End Chart day température -->
         
         <!-- next days température -->
         <section class="days-list">
-            <div class="days">
-                <span class="day-name">Lu</span>
-                <img src="logo" alt="">
-                <span class="temp">19°</span>
-            </div>
-            <div class="days">
-                <span class="day-name">Lu</span>
-                <img src="logo" alt="">
-                <span class="temp">19°</span>
-            </div>
-            <div class="days">
-                <span class="day-name">Lu</span>
-                <img src="logo" alt="">
-                <span class="temp">19°</span>
-            </div>
-            <div class="days">
-                <span class="day-name">Lu</span>
-                <img src="logo" alt="">
-                <span class="temp">19°</span>
-            </div>
-            <div class="days">
-                <span class="day-name">Lu</span>
-                <img src="logo" alt="">
-                <span class="temp">19°</span>
-            </div>
+            
         </section>
         <!-- End next days température -->
 
@@ -76,9 +54,15 @@
     </div>
 </body>
 </html>
+<!-- chartJS-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+ <!-- Swiper JS -->
 
 <script defer src="assets/js/api/api.js"></script>
 <script defer src="assets/js/controllers/HeaderController.js"></script>
 <script defer src="assets/js/controllers/weatherController.js"></script>
 <script defer src="assets/js/models/CityWeatherModel.js"></script>
+<script defer src="assets/js/models/WeekWeatherModel.js"></script>
+<script defer src="assets/js/vues/weekWeatherTemplate.js"></script>
 <script defer src="assets/js/App.js"></script>

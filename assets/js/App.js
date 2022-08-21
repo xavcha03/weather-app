@@ -5,8 +5,8 @@ class App{
         this.weatherController = new WeatherContoller();
         this.weatherApi = new WeatherApi();
         this.cityWeatherWrapper = document.querySelector(".city-weather");
-        
-
+        this.weekWeatherWrapper = document.querySelector(".days-list");
+        this.weekWeatherTemplate = new WeekWeatherTemplate(this.weekWeatherWrapper)
     }   
 
     async main(){
@@ -22,26 +22,26 @@ class App{
         let currentWeatherTemplate = this.weatherController.createTemplate(cityWeatherModel);
         this.cityWeatherWrapper.innerHTML = currentWeatherTemplate;
         //données sur 5 jours
-        let week = await this.weatherApi.getWeatherWeekData(city)
-        console.log(week.list[0]);
-        this.weekModel = week.list.map(elt => {
-            let date = new Date(elt.dt_txt);
-            return {
-                "dayNumber" : date.getDate(),
-                "weekDay": date.getDay(),       //0= dimanche 6 = samedi
-                "hours" : date.getHours(),
-                "temp" : elt.temp,
-                "weather": elt.weather
-
-                //////
-                /////
-                ///// Utiliser la biblio de graph pour afficher toutes les 3heures la température et afficher le logo de la météo sur chaque 3h
-                /////
-                /////
-                
-            }
+        let weekWeatherData = await this.weatherApi.getWeatherWeekData(city)
+        console.log(weekWeatherData);
+        this.weekModelList = weekWeatherData.list.map(elt => {
+            return new WeekWeatherModel(elt);
+           
         });
-        console.log(this.weekModel);
+        //creation du template de la liste des jours
+        let container = document.createElement('div');
+        
+        this.weekWeatherWrapper.innerHTML = this.weekModelList.map(dayWeather=>{
+            return this.weekWeatherTemplate.createTemplate(dayWeather)
+        }).join("");
+
+
+        //creattion du chartJS
+        
+        this.weatherController.initChart(this.weekModelList);
+
+
+
 
 
     }
