@@ -14,7 +14,7 @@
             <form class="header__form">
                 <label for="cityInput"><img src="./assets/img/icon-search.svg" alt=""></label>
                 <section class="input-group">
-                    <input type="text" id="cityInput" placeholder="City" name="cityInput">
+                    <input autocomplete="off" type="text" id="cityInput" placeholder="City" name="cityInput">
                     <button type="submit">Ok</button>
                     <ul class="cities">
                     </ul>
@@ -63,6 +63,7 @@
 <script defer src="assets/js/models/CssColor.js"></script>
 <script defer src="assets/js/controllers/HeaderController.js"></script>
 <script defer src="assets/js/controllers/weatherController.js"></script>
+<script defer src="assets/js/controllers/FavoriteCityController.js"></script>
 <script defer src="assets/js/models/CityWeatherModel.js"></script>
 <script defer src="assets/js/models/WeekWeatherModel.js"></script>
 <script defer src="assets/js/vues/weekWeatherTemplate.js"></script>

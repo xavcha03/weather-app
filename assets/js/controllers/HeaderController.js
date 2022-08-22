@@ -91,7 +91,6 @@ class HeaderController{
             if(this.input.value != '') return;
             //Récupération de la liste des ville
             let localStorageData = localStorage.getItem("recentCities");
-            console.log(localStorageData);
             let cities = JSON.parse(localStorageData);
             //S'il y a des villes on affiche
             

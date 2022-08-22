@@ -7,6 +7,8 @@ class App{
         this.cityWeatherWrapper = document.querySelector(".city-weather");
         this.weekWeatherWrapper = document.querySelector(".days-list");
         this.weekWeatherTemplate = new WeekWeatherTemplate(this.weekWeatherWrapper)
+        this.favoriteCityController = new FavoriteCityController()
+
     }   
 
     async main(){
@@ -21,18 +23,22 @@ class App{
         let cityWeatherModel = new CityWeatherModel(CityWeatherDatas);
         let currentWeatherTemplate = this.weatherController.createTemplate(cityWeatherModel);
         this.cityWeatherWrapper.innerHTML = currentWeatherTemplate;
+        //Gestion des favoris
+        this.favoriteCityController.addEventOnFavBtn(this.cityWeatherWrapper);
+
+
         //données sur 5 jours
         let weekWeatherData = await this.weatherApi.getWeatherWeekData(city)
-        console.log(weekWeatherData);
         this.weekModelList = weekWeatherData.list.map(elt => {
             return new WeekWeatherModel(elt);
            
         });
         //creation du template de la liste des jours
-        let container = document.createElement('div');
-        
+        console.log(this.weekModelList);
         this.weekWeatherWrapper.innerHTML = this.weekModelList.map(dayWeather=>{
-            return this.weekWeatherTemplate.createTemplate(dayWeather)
+            if(dayWeather.hours==12){
+                return this.weekWeatherTemplate.createTemplate(dayWeather)
+            }
         }).join("");
 
 

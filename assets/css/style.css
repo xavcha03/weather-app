@@ -124,7 +124,11 @@ table {
 
 :root {
   --humidity: 100%;
-  --windDeg: 0; }
+  --windDeg: 0;
+  --color-white: #E3E9CD;
+  --color-darkBlue: #104D7A;
+  --color-black: #02121E;
+  --color-primary: #99D98C; }
 
 body {
   background-color: #104D7A;
@@ -282,6 +286,9 @@ a {
       background-size: contain; }
       .city-weather__header button.selected {
         background-image: url("../img/fav-selected.svg"); }
+      .city-weather__header button:hover {
+        transform: scale(2);
+        transition: transform 2s; }
   .city-weather .maindatas {
     display: flex;
     flex-direction: column;

@@ -4,10 +4,8 @@ class WeatherContoller{
 
     initChart(datas){
         
-        console.log(datas.map(data=>data.temp))
         const labels = datas.map(data=>data.weekDay + ' ' + data.hours + ':'+data.minutes)
         let cssColor = new CssColor();
-        console.log(cssColor)
         
           const data = {
             labels: labels,
@@ -57,8 +55,6 @@ class WeatherContoller{
             document.getElementById('myChart'),
             config
         );
-
-        console.log(myChart);
     }
 
 
@@ -68,7 +64,7 @@ class WeatherContoller{
         var r = document.querySelector(':root');
         r.style.setProperty('--humidity', cityWeatherModel.humidity+"%");
         r.style.setProperty('--windDeg', cityWeatherModel.windDeg+"deg");
-        return`
+        let template = `
         <div class="city-weather__header">
                 <h1>${cityWeatherModel.cityName}</h1>
                 <button class="fav-btn"></button>
@@ -92,5 +88,8 @@ class WeatherContoller{
                 <span class="wind__speed">${cityWeatherModel.windSpeed}km/h</span>
             </section>
         `
+        
+
+        return template;
     }
 }

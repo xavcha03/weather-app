@@ -1,6 +1,5 @@
 class CssColor{
     constructor(){
-        console.log("coucou");
         this.style = getComputedStyle(document.documentElement);
         this.white = this.style.getPropertyValue('--color-white');
         this.darkBlue = this.style.getPropertyValue('--color-darkBlue');

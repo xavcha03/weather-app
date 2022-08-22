@@ -28,6 +28,11 @@
             &.selected {
                 background-image: url('../img/fav-selected.svg');
             }
+
+            &:hover {
+                transform: scale(2);
+                transition: transform 2s;
+            }
         }
 
 
