@@ -6,7 +6,8 @@ class WeatherContoller{
         
         console.log(datas.map(data=>data.temp))
         const labels = datas.map(data=>data.weekDay + ' ' + data.hours + ':'+data.minutes)
-
+        let cssColor = new CssColor();
+        console.log(cssColor)
         
           const data = {
             labels: labels,
@@ -21,7 +22,35 @@ class WeatherContoller{
           const config = {
             type: 'line',
             data: data,
-            options: {}
+            options: {
+                tension:0.4,
+                plugins : {
+                    legend : {
+                        labels : {
+                            color: cssColor.black
+                        }
+                    },
+                    
+                },
+                scales : {
+                    x:{
+                        grid:{
+                            borderColor: cssColor.black
+                        },
+                        ticks: {
+                            color:  cssColor.primary,
+                        }
+                    },
+                    y:{
+                        grid:{
+                            borderColor: cssColor.black
+                        },
+                        ticks: {
+                            color:  cssColor.primary,
+                        }
+                    }
+                }
+            }
           };
 
           const myChart = new Chart(

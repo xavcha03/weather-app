@@ -25,7 +25,7 @@ class WeekWeatherModel{
         return this._date.getHours();
     }
     get minutes(){
-        return this._date.getMinutes();
+        return this._date.getMinutes()<10?'0'+this._date.getMinutes():this._date.getMinutes();
     }
     get temp(){
         return this._temp;

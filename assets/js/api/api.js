@@ -13,4 +13,8 @@ class WeatherApi{
         let datas = await (await fetch(this.baseUrl + "forecast?q=" + city + this.urlOptions)).json();
         return datas;
     }
+
+    async getUnsplashImg(city){
+        
+    }
 }
