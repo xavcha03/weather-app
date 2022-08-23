@@ -1,4 +1,4 @@
-class CityWeatherModel{
+export class CityWeatherModel{
     constructor(datas){
         this._feels_like = datas.main.feels_like;
         this._humidity = datas.main.humidity;

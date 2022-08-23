@@ -1,4 +1,4 @@
-class WeatherApi{
+export class WeatherApi{
     constructor() {
         this.baseUrl = "https://api.openweathermap.org/data/2.5/";
         this.urlOptions = "&lang=fr&units=metric&appid=dba81f2ac1d88360af75ac8419400cdd";

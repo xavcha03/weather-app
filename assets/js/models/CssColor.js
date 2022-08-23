@@ -1,4 +1,4 @@
-class CssColor{
+export class CssColor{
     constructor(){
         this.style = getComputedStyle(document.documentElement);
         this.white = this.style.getPropertyValue('--color-white');

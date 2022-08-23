@@ -1,4 +1,5 @@
-class WeatherContoller{
+import {CssColor} from '../models/CssColor.js';
+export class WeatherContoller{
     constructor(){
     }
 

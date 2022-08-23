@@ -1,4 +1,4 @@
-class WeekWeatherTemplate{
+export class WeekWeatherTemplate{
     constructor(wrapper){
         this.wrapper = wrapper
     }

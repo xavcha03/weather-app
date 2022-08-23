@@ -1,4 +1,4 @@
-class WeekWeatherModel{
+export class WeekWeatherModel{
     constructor(datas){
         this._date = new Date(datas.dt_txt);
         this._temp = datas.main.temp;

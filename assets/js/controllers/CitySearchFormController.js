@@ -1,4 +1,5 @@
-class HeaderController{
+/** This class control the searchForm */
+export class CitySearchFormController{
     constructor(headerWrapper, routerFunc, changeCityFunc){
         this.CitiesApiUrl = "https://api.teleport.org/api/cities/?search=";
 
